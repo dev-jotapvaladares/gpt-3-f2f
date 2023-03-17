@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gerador de Prompt</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Gerador de Prompt</h1>
+        </header>
+        
+        <main>
+            <section id="input-section">
+
+                <div id="primary-input-div">
+
+                    <label for="empresa">Empresa:</label>
+                    <select id="empresa" name="empresa">
+                        <option>Le Wagon</option>
+                        <option>Avenues</option>
+                        <option>União Química</option>
+                        <option>F2F</option>
+                    </select>
+
+                    <label for="marca">Marca:</label>
+                    <select id="marca" name="marca">
+                    </select>
+
+                    <label for="tarefa">Tarefa:</label>
+                    <select id="tarefa" name="tarefa">
+                        <option>Post de mídias sociais</option>
+                        <option>Email mkt</option>
+                    </select>
+
+
+                </div>
+
+                <div id="task-input-div">
+
+                    <div id="post-options-div">
+
+                        <label for="plataforma">Plataforma:</label>
+                        <select id="plataforma" name="plataforma">
+                            <option>Linkedin</option>
+                            <option>Instagram</option>
+                            <option>Facebook</option>
+                            <option>Twitter</option>
+                        </select>
+
+                        <!--<label for="quantidade-de-posts">Quantidade de posts:</label>
+                        <select id="quantidade-de-posts" name="quantidade-de-posts">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>-->
+
+                        <label for="categoria-do-post">Categoria do post:</label>
+                        <select id="categoria-do-post" name="categoria-do-post">
+                            <option></option>
+                            <option>Tema específico</option>
+                            <option>Resumo de artigo</option>
+                            <option>Livro</option>
+                            <option>Citação</option>
+                            <option>Datas</option>
+                            <option>Produto/Serviço</option>
+                            <option>Recrutamento</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div id="task-input-category">
+
+                    <div id="post-options-div-2">
+                        <label for="detalhe-tema">Detalhe o tema:</label>
+                        <textarea id="detalhe-tema" name="detalhe-tema" rows="4"></textarea>
+                    </div>
+                
+                    <div id="post-options-div-3">
+                        <label for="texto-artigo">Texto do artigo:</label>
+                        <textarea id="texto-artigo" name="texto-artigo" rows="4"></textarea>
+                    </div>
+                
+                    <div id="post-options-div-4">
+                        <label for="indique-livro">Indique o livro:</label>
+                        <textarea id="indique-livro" name="indique-livro" rows="4"></textarea>
+                    </div>
+                
+                    <div id="post-options-div-5">
+                        <label for="cite-frase-autor">Cite a frase e autor:</label>
+                        <textarea id="cite-frase-autor" name="cite-frase-autor" rows="4"></textarea>
+                    </div>
+                
+                    <div id="post-options-div-6">
+                        <label for="defina-data-motivo">Defina a data e motivo:</label>
+                        <textarea id="defina-data-motivo" name="defina-data-motivo" rows="4"></textarea>
+                    </div>
+                
+                    <div id="post-options-div-7">
+                        <label for="escolha-produto-servico">Escolha o produto/serviço:</label>
+                        <textarea id="escolha-produto-servico" name="escolha-produto-servico" rows="4"></textarea>
+                    </div>
+                
+                    <div id="post-options-div-8">
+                        <label for="especifique-oportunidade">Especifique a oportunidade:</label>
+                        <textarea id="especifique-oportunidade" name="especifique-oportunidade" rows="4"></textarea>
+                    </div>
+
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" rows="4"></textarea>
+
+                    <label for="idioma">Idioma:</label>
+                    <select id="idioma" name="idioma">
+                        <option>Português</option>
+                        <option>Inglês</option>
+                        <option>Espanhol</option>
+                    </select>
+
+                </div>
+
+                <div id="task-input-brand">
+
+                    <label for="visao-geral">Visão geral:</label>
+                    <textarea id="visao-geral" name="visao-geral" rows="4"></textarea>
+
+                    <label for="publico-alvo">Público alvo:</label>
+                    <textarea id="publico-alvo" name="publico-alvo" rows="4"></textarea>
+
+                    <label for="categoria">Categoria:</label>
+                    <textarea id="categoria" name="categoria" rows="4"></textarea>
+
+                    <label for="lexico">Léxico:</label>
+                    <textarea id="lexico" name="lexico" rows="4"></textarea>
+
+                    <label for="tom-de-voz">Tom de voz:</label>
+                    <textarea id="tom-de-voz" name="tom-de-voz" rows="4"></textarea>
+
+                    <label for="produto-servico">Produto/serviço:</label>
+                    <textarea id="produto-servico" name="produto-servico" rows="4"></textarea>
+
+                    <label for="caracteristicas-produto-servico">Características do produto/serviço:</label>
+                    <textarea id="caracteristicas-produto-servico" name="caracteristicas-produto-servico" rows="4"></textarea>
+
+                    <label for="exemplos-de-post">Exemplos de post:</label>
+                    <textarea id="exemplos-de-post" name="exemplos-de-post" rows="4"></textarea>
+
+                    <label for="emoji">Emojis:</label>
+                    <input type="checkbox" id="emoji" name="emoji">
+                
+                    <label for="hashtag">Hashtags:</label>
+                    <input type="checkbox" id="hashtag" name="hashtag">
+
+                    <label for="hashtag-quantidade">Quantidade de hashtags:</label>
+                    <input type="number" id="hashtag-quantidade" name="hashtag-quantidade" min="0" max="5">
+
+                    <label for="hashtag-definicao">Definição das hashtags:</label>
+                    <textarea id="hashtag-definicao" name="hashtag-definicao" rows="4"></textarea>
+
+                </div>
+
+                <div id="task-input-rules">
+
+                    <label for="temperatura">Temperatura:</label>
+                    <input type="number" id="temperatura" name="temperatura" min="0" max="1" step="0.1">
+
+                    <label for="formato-texto">Formato para inserir texto:</label>
+                    <textarea id="formato-texto" name="formato-texto" rows="4"></textarea>
+
+                </div>
+
+            </section>
+            <section id="output-section">
+                <textarea name="" id="output-textarea" cols="30" rows="10"></textarea>
+            </section>
+        </main>
+
+        <footer>
+                <p>F2F - 2023</p>
+        </footer>
+
+        <script>
+
+            const openai = require('openai');
+
+            // Configure as suas chaves de acesso
+            openai.apiKey = 'SUA_CHAVE_DE_API';
+
+            // Defina o modelo que você deseja usar
+            const model = 'text-davinci-002';
+            const numResponses = 1;
+
+
+            var empresaDropdown = document.getElementById("empresa");
+            var marcaDropdown = document.getElementById("marca");
+        
+            // Define as opções de marca para cada empresa
+            var marcasPorEmpresa = {
+                "Le Wagon": ["Institucional"],
+                "Avenues": ["Institucional"],
+                "União Química": ["Institucional", "Agener"],
+                "F2F": ["Institucional", "Ana Rosa", "Felipe Bogéa", "Fernando Escarlate", "Fred Pericini", "Júlia Giglio", "Thiago Ramos"]
+            };
+        
+            // Função que atualiza as opções da dropdown marca de acordo com a empresa selecionada
+            function atualizarMarcas() {
+                // Remove todas as opções existentes
+                marcaDropdown.innerHTML = "";
+        
+                // Obtém a lista de marcas para a empresa selecionada
+                var marcas = marcasPorEmpresa[empresaDropdown.value];
+        
+                // Adiciona as novas opções de marca
+                for (var i = 0; i < marcas.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = marcas[i];
+                    marcaDropdown.add(option);
+                }
+            }
+        
+            // Define um listener para a dropdown empresa
+            empresaDropdown.addEventListener("change", atualizarMarcas);
+        
+            // Inicializa as opções da dropdown marca para a empresa selecionada inicialmente
+            atualizarMarcas();
+
+            var tarefaDropdown = document.getElementById("tarefa");
+            var postOptionsDiv = document.getElementById("post-options-div");
+
+            function atualizarTarefa() {
+                if (tarefaDropdown.value === "Post de mídias sociais") {
+                    // Se a opção "Post de mídias sociais" foi selecionada, exibe as dropdowns de opções de post
+                    postOptionsDiv.style.display = "block";
+                } else {
+                    // Caso contrário, oculta as dropdowns
+                    postOptionsDiv.style.display = "none";
+                }
+            }
+
+            // Obtém a seção de entrada e a área de saída do documento
+            const inputSection = document.getElementById("input-section");
+            const outputTextArea = document.getElementById("output-section");
+
+            // Obtém todas as dropdowns e textareas dentro da seção de entrada
+            const dropdowns = inputSection.querySelectorAll("select");
+            const textareas = inputSection.querySelectorAll("textarea");
+
+            function outputFinal() {
+
+                var empresa = document.getElementById("empresa").value;
+                var marca = document.getElementById("marca").value;
+                var tarefa = document.getElementById("tarefa").value;
+                var plataforma = document.getElementById("plataforma").value;
+                var categoriaDoPost = document.getElementById("categoria-do-post").value;
+                var detalheTema = document.getElementById("detalhe-tema").value;
+                var textoArtigo = document.getElementById("texto-artigo").value;
+                var indiqueLivro = document.getElementById("indique-livro").value;
+                var citeFraseAutor = document.getElementById("cite-frase-autor").value;
+                var definaDataMotivo = document.getElementById("defina-data-motivo").value;
+                var escolhaProdutoServico = document.getElementById("escolha-produto-servico").value;
+                var especifiqueOportunidade = document.getElementById("especifique-oportunidade").value;
+                var descricao = document.getElementById("descricao").value;
+                var visaoGeral = document.getElementById("visao-geral").value;
+                var publicoAlvo = document.getElementById("publico-alvo").value;
+                var categoria = document.getElementById("categoria").value;
+                var lexico = document.getElementById("lexico").value;
+                var tomDeVoz = document.getElementById("tom-de-voz").value;
+                var produtoServico = document.getElementById("produto-servico").value;
+                var caracteristicasProdutoServico = document.getElementById("caracteristicas-produto-servico").value;
+                var exemplosDePost = document.getElementById("exemplos-de-post").value;
+                var emoji = document.getElementById("emoji").value;
+                var hashtag = document.getElementById("hashtag").value;
+                var hashtagQuantidade = document.getElementById("hashtag-quantidade").value;
+                var hashtagDefinicao = document.getElementById("hashtag-definicao").value;
+                var temperatura = document.getElementById("temperatura").value;
+                var formatoTexto = document.getElementById("formato-texto").value;
+
+                let textarea = document.getElementById("output-textarea");
+                
+                if(categoriaDoPost == "Tema específico") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nDescrição: " + descricao;
+                } else if(categoriaDoPost == "Resumo de artigo") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nArtigo de referência: " + textoArtigo + ".\nDescrição: " + descricao;
+                } else if(categoriaDoPost == "Livro") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nNome do livro: " + indiqueLivro + ".\nDescrição: " + descricao;
+                } else if(categoriaDoPost == "Citação") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nCitação: " + citeFraseAutor + ".\nDescrição: " + descricao;
+                } else if(categoriaDoPost == "Datas") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nData e motivo: " + definaDataMotivo + ".\nDescrição: " + descricao;
+                } else if(categoriaDoPost == "Produto/Serviço") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma +".\nDetalhes do tema: " + detalheTema + ".\nDescrição: " + descricao;
+                } else if(categoriaDoPost == "Recrutamento") {
+                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nDescrição da oportunidade: " + citeFraseAutor + ".\nDescrição: " + descricao;
+                } else {
+                    textarea.value = "Inválido";
+                }
+
+                textarea.value += "\nText:”””{" + formatoTexto + "}”””";
+
+                textarea.value += "\nVisão geral: " + visaoGeral;
+                textarea.value += "\nPúblico alvo: " + publicoAlvo;
+                textarea.value += "\nCategoria: " + categoria;
+                textarea.value += "\nLéxico: " + lexico;
+                textarea.value += "\nTom de voz: " + tomDeVoz;
+                textarea.value += "\nNome do produto/serviço: " + produtoServico;
+                textarea.value += "\nCaracterísticas do produto/serviço: " + caracteristicasProdutoServico;
+                textarea.value += "\nExemplos de post: " + exemplosDePost;
+                if(emoji==true) {
+                    textarea.value += "\nInsira emojis no texto";
+                } else {
+                    textarea.value += "\nNão insira emojis no texto";
+                }
+                if(hashtag==true) {
+                    textarea.value += "\nInsira hashtags no texto";
+                    textarea.value += "\nNúmero de hashtags: " + hashtagQuantidade;
+                    textarea.value += "\nDefinição das hashtags: " + hashtagDefinicao
+                } else {
+                    textarea.value += "\nNão insira hashtags no texto";
+                }
+/*
+                openai.completions.create({
+                    engine: model,
+                    prompt: textarea.value,
+                    maxTokens: 1024,
+                    n: numResponses,
+                }).then(response => {
+                    console.log(response.choices[0].text);
+                }).catch(error => {
+                    console.log(error);
+                });
+*/
+            }
+
+            var meuBotao = document.getElementById("categoria-do-post");
+            meuBotao.addEventListener("change", outputFinal);
+
+        </script>
+        
+    </body>
+</html>
