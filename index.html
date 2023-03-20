@@ -253,6 +253,38 @@
             const dropdowns = inputSection.querySelectorAll("select");
             const textareas = inputSection.querySelectorAll("textarea");
 
+            // Incluímos o pacote xlsx para ler o arquivo XLSX
+            const xlsx = require('xlsx');
+
+            // Carregamos o arquivo XLSX
+            const workbook = xlsx.readFile('dataset.xlsx');
+
+            // Selecionamos a primeira planilha
+            const sheet = workbook.Sheets[workbook.SheetNames[0]];
+
+            // Transformamos a planilha em array
+            const data = xlsx.utils.sheet_to_json(sheet);
+
+            // Criamos variáveis para armazenar os dados da planilha
+            let variaveis = {};
+
+            // Iteramos cada linha do array
+            data.forEach(row => {
+            // Iteramos as colunas da linha
+            Object.keys(row).forEach(key => {
+                // Se a variável ainda não tiver sido criada, criamos um array
+                if (!variaveis[key]) variaveis[key] = [];
+                
+                // Adicionamos o valor da coluna à variável
+                variaveis[key].push(row[key]);
+            });
+            });
+
+            // Imprimimos as variáveis e seus nomes
+            Object.keys(variaveis).forEach(key => {
+            console.log(`${key}: ${variaveis[key]}`);
+            });
+
             function outputFinal() {
 
                 var empresa = document.getElementById("empresa").value;
@@ -286,19 +318,19 @@
                 let textarea = document.getElementById("output-textarea");
                 
                 if(categoriaDoPost == "Tema específico") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post para a empresa " + empresa + ", no " + plataforma + ".\nDetalhes do tema: " + detalheTema + ".\nDescrição: " + descricao;
                 } else if(categoriaDoPost == "Resumo de artigo") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nArtigo de referência: " + textoArtigo + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post no " + plataforma + " resumindo o artigo" + ".\nText: " + textoArtigo + ".\nDescrição: " + descricao;
                 } else if(categoriaDoPost == "Livro") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nNome do livro: " + indiqueLivro + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post no " + plataforma + " sobre o livro: " + indiqueLivro + ".\nDescrição: " + descricao;
                 } else if(categoriaDoPost == "Citação") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nCitação: " + citeFraseAutor + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post no " + plataforma + " a partir da Citação: " + citeFraseAutor + ".\nDescrição: " + descricao;
                 } else if(categoriaDoPost == "Datas") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nData e motivo: " + definaDataMotivo + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post no " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nData e motivo: " + definaDataMotivo + ".\nDescrição: " + descricao;
                 } else if(categoriaDoPost == "Produto/Serviço") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma +".\nDetalhes do tema: " + detalheTema + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post no " + plataforma +".\nDetalhes do tema: " + detalheTema + ".\nDescrição: " + descricao;
                 } else if(categoriaDoPost == "Recrutamento") {
-                    textarea.value = "Faça um post para a empresa " + empresa + ", na plataforma " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nDescrição da oportunidade: " + citeFraseAutor + ".\nDescrição: " + descricao;
+                    textarea.value = "Escreva um post no " + plataforma + " e com a categoria " + categoriaDoPost + ".\nDetalhes do tema: " + detalheTema + ".\nDescrição da oportunidade: " + citeFraseAutor + ".\nDescrição: " + descricao;
                 } else {
                     textarea.value = "Inválido";
                 }
